@@ -243,11 +243,12 @@
         }).then((result) => {
             if (result.value) {
                 music.play()
-                $(".card").fadeTo(0, 1).addClass("rotate2").addClass("ok")
+                $(".card").fadeTo(0, 1).addClass("rotate2") //.addClass("ok")
                 $("#Timer").fadeTo(500, 1);
                 $(".Best-Time").fadeTo(500, 1);
                 $("#play").fadeTo(500, 1);
                 $("#music").fadeTo(500, 1);
+                $("#play").click();
             }
         })
 
@@ -353,59 +354,11 @@
                         Swal.fire({
                             allowOutsideClick: false,
                             title: 'Победа!',
-                            footer: '<h4 style="color:#8b4513">Следующее задание такое: XXX XXX XXXXXX XXX XXXXXX XXX XXXXXX XXX XXXXXX XXX XXXXXX XXX XXX?</h4>',
-                            background: "url(./images/176780.gif) center/cover",
+
+
+                            footer: '<p style="color:#8b4513"><b>Загадка:</b><br>Часть квартиры – за окном.<br>Крепко держится за дом.<br>Подо мной идёт прохожий,<br>Над землёй висит…</p>',
+                            background: "url(./images/176780.gif)",
                         }).then((result) => {
-                            /*
-                            let new_timer = $("#timer").html()
-                            let new_timer_val = new_timer.replace(/:/g, "")
-                            let highscore_timer = highscore.timer != 0 ? highscore.timer.replace(/:/g, "") : highscore.timer
-                            // let highscore_timer = 0
-
-                            // if( highscore.timer != 0){
-                            //     highscore_timer = highscore.timer.replace(/:/g, "")
-                            // }
-                            // else{
-                            //     highscore_timer = highscore.timer
-                            // }
-
-                            // console.log("storage-->" + storage)
-                            // console.log("abc-->" + abc + ":::highscore.timer-->" + highscore_timer)
-                            // console.log("int_abc-->" + parseInt(abc) + ":::int_timer-->" + parseInt(highscore_timer))
-                            if (result.value) {
-                                //數字越小越厲害
-                                if (highscore_timer == 0 || parseInt(new_timer_val) < parseInt(highscore_timer)) {
-                                    const { value: yourname } = Swal.fire({
-                                        allowOutsideClick: false,
-                                        inputPlaceholder: "請輸入您的暱稱",
-                                        title: '恭喜獲得最佳成績!',
-                                        input: 'text',
-                                        showCancelButton: true,
-                                        confirmButtonText: "Done",
-                                        background: "url(./images/176780.gif) center/cover",
-                                        inputClass: 'custom-input-class',
-                                        inputValidator: (value) => {
-                                            // 如果有輸入
-                                            if (value !== null && value.trim() !== '') {
-                                                console.log("abcdefg");
-                                                // 將輸入的名字與分數存入變數
-                                                highscore.name = value
-                                                highscore.timer = new_timer
-                                                // highscore.timer = $("#timer").html()
-                                                // console.log("name-->" + value)
-                                                // console.log("timer-->" + new_timer)
-                                                // 修改最高分
-                                                $("#text-highplayer").html(highscore.name);
-                                                $("#text-highscore").html(highscore.timer);
-                                                // 將最高的分數轉成文字後存入localstroage
-                                                localStorage.setItem("highscore", JSON.stringify(highscore))
-                                            }
-                                        }
-                                    })
-                                }
-                                def()
-                            }
-                            */
                             def();
                         })
                     }, 100);
